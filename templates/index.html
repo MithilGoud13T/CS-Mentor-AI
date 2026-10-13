@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Mentor AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    
+    <div class="app">
+        <header>
+            <h1>CS Mentor AI</h1>
+            <p>Your Computer Science Engineering Study Partner</p>
+            <span id="status">Checking connection...</span>
+        </header>
+
+        <section class="toolbar">
+            <label for="mode">Learning mode:</label>
+            <select id="mode">
+                <option>Learn Concept</option>
+                <option>Exam Preparation</option>
+                <option>Code Tutor</option>
+                <option>Debug My Code</option>
+                <option>DSA Practice</option>
+                <option>Interview Preparation</option>
+                <option>Quick Revision</option>
+            </select>
+            <button id="clearBtn" type="button">Clear Chat</button>
+        </section>
+
+        <main id="messages" aria-live="polite">
+            <div class="message assistant">
+                <strong>CS Mentor AI</strong>
+                <p>Hello! Ask me about programming, DBMS, Operating Systems,
+                Computer Networks, DSA, or any Computer Science subject.</p>
+            </div>
+        </main>
+
+        <form id="chatForm">
+            <textarea id="messageInput" rows="3"
+                placeholder="Ask your Computer Science question..."
+                required maxlength="10000"></textarea>
+            <button id="sendBtn" type="submit">Send</button>
+        </form>
+
+        <footer>Powered by your local Llama 3.2 model through Ollama</footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+   
+</body>
+</html>
